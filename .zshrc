@@ -21,6 +21,7 @@ alias my-server='ssh frogprog@164.68.120.175'
 alias cdh='cd /home/frogprog/.config/hypr'
 alias cdb='cd /home/frogprog/.config/bspwm'
 alias cdw='cd /home/frogprog/.config/waybar'
+alias cdd='cd /home/frogprog/.dotfiles/'
 alias cdn='cd /home/frogprog/.dotfiles/.config/nvim'
 alias cdc='cd /home/frogprog/Programming/projects/simple-calculator'
 
