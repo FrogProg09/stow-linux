@@ -17,13 +17,16 @@ alias y='yazi'
 alias b='btop'
 alias q='exit'
 alias ff='fastfetch'
+alias l='ls -l'
 alias my-server='ssh frogprog@164.68.120.175'
-alias cdh='cd /home/frogprog/.config/hypr'
+alias cdh='cd /home/frogprog/.dotfiles/.config/hypr'
 alias cdb='cd /home/frogprog/.config/bspwm'
 alias cdw='cd /home/frogprog/.config/waybar'
 alias cdd='cd /home/frogprog/.dotfiles/'
 alias cdn='cd /home/frogprog/.dotfiles/.config/nvim'
 alias cdc='cd /home/frogprog/Programming/projects/simple-calculator'
+alias cdz='cd /home/frogprog/Programming/projects/my-ergonaut-zmk/'
+alias vp='vim /home/frogprog/Programming/practise/commands-to-master.txt'
 
 export EDITOR="$(which nvim)"
 export VISUAL="$(which nvim)"
