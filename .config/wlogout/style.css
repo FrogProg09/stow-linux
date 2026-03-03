@@ -16,20 +16,20 @@ window {
 }
 
 button {
-  border-radius: 8;
+  border-radius: 0;
   border-color: #282828;
   color: #000000;
-	background-color: #EBDBB2;
+	background-color: #f9f5d7;
 	border-style: solid;
 	border-width: 2px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 20%;
-  margin: 5px;
+  margin: 1px;
 }
 
 button:focus, button:active, button:hover {
-	background-color: #D6C59A;
+	background-color: #689D6A;
 	outline-style: none;
 }
 

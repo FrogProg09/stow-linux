@@ -58,23 +58,26 @@ button:hover {
 }
 
 #workspaces /* button */ {
-  background-color: #EBDBB2;
-  color: #000000;
-  padding: 0px 10px 0px 10px;
-  margin: 3px 15px 3px 15px;
-  border-radius: 8px;
-  opacity: 1;
-  border: 2px solid #282828;
+    background-color: rgba(29, 32, 33, 0.75);
+    margin: 3px 15px;
+    padding: 0px; /* Убираем падинг у контейнера, чтобы кнопки прилегали к краям */
+    border-radius: 0px;
+    color: #ebdbb2;
+    border: 1px solid rgba(102, 106, 74, 0.5);
 }
 
 #workspaces button {
-  padding: 0 5px;
-  background-color: transparent;
-  color: #000000;
+    color: #ebdbb2;
+    border-radius: 0px;
+    padding: 0px 20px;
+    min-width: 45px;
+    transition: all 0.3s ease;
 }
 
 #workspaces button:hover {
-  background: rgba(0, 0, 0, 0.2);
+    background-color: rgba(168, 153, 132, 0.2);
+    box-shadow: inherit; 
+    text-shadow: inherit;
 }
 
 #workspaces button.focused {
@@ -87,8 +90,9 @@ button:hover {
 }
 
 #workspaces button.active {
-  border-radius: 8px;
-  min-width: 30px;
+    background-color: #689d6a;
+    color: #1d2021;
+    border-bottom: 2px solid #ebdbb2;
 }
 
 #mode {
@@ -108,6 +112,7 @@ button:hover {
 #wireplumber,
 #custom-media,
 #custom-separator
+#custom-weather
 #group-info-stuff
 #tray,
 #mode,
@@ -126,35 +131,38 @@ button:hover {
 }
 
 #custom-separator {
-  color: #1B5E20;
+  color:  #ebdbb2;
   margin: 0 5px;
+}
+
+#custom-weather{
+  color: #000000;
+  margin: 0 4px;
 }
 
 /*doing islands for left module group*/
 
 .modules-left { 
-  background-color: #EBDBB2;
-  color: #000000;
-  padding: 0px 10px 0px 10px;
-  margin: 3px 15px 3px 15px;
-  border-radius: 8px;
-  opacity: 0.8;
-  border: 2px solid #282828;
+    background-color: rgba(29, 32, 33, 0.75);
+    color: #ebdbb2;
+    padding: 0px 15px;
+    margin: 3px 15px;
+    border-radius: 0px;
+    border: 1px solid rgba(102, 106, 74, 0.5);
 }
 
 /*doing islands for right module group*/
 .modules-right { 
-  background-color: #EBDBB2;
-  color: #000000;
-  padding: 0px 10px 0px 10px;
-  margin: 3px 15px 3px 15px;
-  border-radius: 8px;
-  opacity: 0.8;
-  border: 2px solid #282828;
+    background-color: rgba(29, 32, 33, 0.75);
+    color: #ebdbb2;
+    padding: 0px 15px; /* Сделаем текст внутри модулей свободнее */
+    margin: 3px 15px;
+    border-radius: 0px;
+    border: 1px solid rgba(102, 106, 74, 0.5);
 }
 
 #clock {
-  color: #000000;
+  color: #ebdbb2;
     background-color: transparent;
 }
 
@@ -254,7 +262,7 @@ label:focus {
 }
 
 #network {
-  color: #000000;
+  color: #ebdbb2;
     background-color: transparent;
 }
 
@@ -264,7 +272,7 @@ label:focus {
 
 #pulseaudio {
   background-color: transparent;
-  color: #000000;
+  color: #ebdbb2;
 }
 
 #pulseaudio.muted {
@@ -304,14 +312,13 @@ label:focus {
 }
 
 #tray {
-  color: #000000;
+  color: #ebdbb2;
     background-color: transparent;
 }
 
 #tray > .passive {
   -gtk-icon-effect: dim;
 }
-
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
