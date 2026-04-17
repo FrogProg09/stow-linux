@@ -6,6 +6,7 @@
 /*                     |___/                           |___/         */
 /*  by Frogprog (2025)  */
 
+
 * {
 	background-image: none;
 	box-shadow: none;
@@ -17,19 +18,19 @@ window {
 
 button {
   border-radius: 0;
-  border-color: #282828;
-  color: #000000;
-	background-color: #f9f5d7;
+  border-color: #bfae9f;
+  color: #fcfcfc;
+	background-color: #1a1a1a;
 	border-style: solid;
 	border-width: 2px;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 20%;
+	background-size: 30%;
   margin: 1px;
 }
 
 button:focus, button:active, button:hover {
-	background-color: #689D6A;
+	background-color: #bfae9f;
 	outline-style: none;
 }
 

@@ -16,7 +16,7 @@ configuration {
   show-icons: false;
 } 
 
-@theme "green-light.rasi"
+@theme "simple-gruvbox.rasi"
 
 * {
   border: 0;

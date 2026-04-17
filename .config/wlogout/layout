@@ -1,12 +1,12 @@
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "systemctl suspend && hyprlock -c $HOME/.config/mango/hyprlock.conf",
     "text" : "Suspend",
     "keybind" : "u"
 }
 {
     "label" : "lock",
-    "action" : "loginctl lock-session",
+    "action" : "hyprlock -c $HOME/.config/mango/hyprlock.conf",
     "text" : "Lock",
     "keybind" : "l"
 }
@@ -24,7 +24,7 @@
 }
 {
     "label" : "logout",
-    "action" : "loginctl terminate-user $USER",
+    "action" : "pkill -u $USER",
     "text" : "Logout",
     "keybind" : "e"
 }
