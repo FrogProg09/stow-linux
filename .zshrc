@@ -11,25 +11,6 @@ source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #eval "$(starship init zsh)"
 
-alias v='vim'
-alias nv='nvim'
-alias y='yazi'
-alias b='btop'
-alias q='exit'
-alias ff='fastfetch'
-alias l='ls -l'
-alias my-server='ssh frogprog@164.68.120.175'
-alias cdh='cd /home/frogprog/.dotfiles/.config/hypr'
-alias cdb='cd /home/frogprog/.config/bspwm'
-alias cdw='cd /home/frogprog/.config/waybar'
-alias cdd='cd /home/frogprog/.dotfiles/'
-alias cdn='cd /home/frogprog/.dotfiles/.config/nvim'
-alias cdm='cd /home/frogprog/.config/mango/'
-alias cdc='cd /home/frogprog/Programming/projects/simple-calculator'
-alias cde='cd /home/frogprog/.config/doom'
-alias cdz='cd /home/frogprog/Programming/projects/my-ergonaut-zmk/'
-alias vp='vim /home/frogprog/Programming/practise/commands-to-master.txt'
-
 export EDITOR="$(which nvim)"
 export VISUAL="$(which nvim)"
 export DOOMDIR=~/.config/doom/
