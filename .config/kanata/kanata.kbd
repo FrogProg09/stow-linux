@@ -1,0 +1,47 @@
+;;     __ __                  __                            _____      
+;;    / //_/___ _____  ____ _/ /_____ _   _________  ____  / __(_)___ _
+;;   / ,< / __ `/ __ \/ __ `/ __/ __ `/  / ___/ __ \/ __ \/ /_/ / __ `/
+;;  / /| / /_/ / / / / /_/ / /_/ /_/ /  / /__/ /_/ / / / / __/ / /_/ / 
+;; /_/ |_\__,_/_/ /_/\__,_/\__/\__,_/   \___/\____/_/ /_/_/ /_/\__, /  
+;;                                                            /____/  
+;;
+;; by Frogprog (2025)
+
+
+;; config function
+(defcfg
+  process-unmapped-keys yes
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
+;; defines the keys
+(defsrc
+  k d
+  s l
+  caps
+  ralt
+)
+
+;; making actual rebindings
+(defalias
+  ;; these two for super (windows) key 
+  k-mod (tap-hold 200 200 k lmet)
+  d-mod (tap-hold 200 200 d lmet)
+  ;; these two for control key
+  s-mod (tap-hold 200 200 s lctl)
+  l-mod (tap-hold 200 200 l lctl)
+  ;; this one for making a capslock escape
+  caps-mod (tap-hold 200 200 esc caps)
+  ;; this for making ralt into backspace
+  ralt-mod (tap-hold 200 200 bspc bspc)
+)
+
+;; operating on keys
+(deflayer base
+  @k-mod
+  @d-mod
+  @s-mod
+  @l-mod
+  @caps-mod
+  @ralt-mod
+)
