@@ -1,0 +1,21 @@
+"_     ___             ____  _             _           
+" \   / (_)_ __ ___   |  _ \| |_   _  __ _(_)_ __  ___ 
+"\ \ / /| | '_ ` _ \  | |_) | | | | |/ _` | | '_ \/ __|
+" \ V / | | | | | | | |  __/| | |_| | (_| | | | | \__ \
+"  \_/  |_|_| |_| |_| |_|   |_|\__,_|\__, |_|_| |_|___/
+"                                    |___/             
+" by Frogprog (2025)
+
+call plug#begin('~/.vim/plugged') " Calling Plug (vim plugin manager)
+
+" actually useful stuff
+Plug 'preservim/nerdtree' " File tree
+Plug 'tmsvg/pear-tree' " Auto closing parenthesis
+Plug 'tpope/vim-commentary' " For easy commenting out stuff
+
+" ~ Look and feel ~
+" Plug 'mhinz/vim-startify' " Funny greeting
+Plug 'morhetz/gruvbox' " Gruvbox theme (cuz I loove gruvbox)
+
+call plug#end() " End of plugins
+
