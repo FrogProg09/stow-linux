@@ -22,23 +22,24 @@ set background=dark
 
 " ~ Some key settings ~
 set mouse=a
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set laststatus=2
 set tabpagemax=10
 set hidden
 set clipboard=unnamedplus
 syntax on 
 
+
 "* Including plugin file if exists *
 
 if filereadable(expand("~/.vimrc.plug"))
-  source ~/.vimrc.plug
+    source ~/.vimrc.plug
 endif
 
 " ~ Keybinds for plugins ~
 
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " *Change look of existing plugins and not only*
 
