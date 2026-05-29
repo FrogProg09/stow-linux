@@ -114,3 +114,6 @@
 ;; Enable spelling in .md files.
 (add-hook 'markdown-mode-hook #'flyspell-mode)
 (setq langtool-language-tool-jar "/usr/share/java/languagetool/languagetool-commandline.jar")
+
+(after! company
+  (setq company-minimum-prefix-length 1))
