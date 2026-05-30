@@ -3,6 +3,11 @@
 My fully configured Linux desktop — MangoWM, Fish, Neovim, Doom Emacs,
 gruvbox everything.
 
+![Desktop](assets/base.png)
+![Doom emacs](assets/doom-emacs.png)
+![Neovim](assets/nvim.png)
+![Terminal](assets/terminal.png)
+
 ## Installation
 
 ### 1. Install dependencies
