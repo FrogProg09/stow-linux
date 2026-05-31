@@ -2,8 +2,7 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = { 'ms-jpq/coq_nvim' },
   config = function()
-    local coq = require('coq')
-    local capabilities = coq.lsp_ensure_capabilities()
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
     local on_attach = function(client, bufnr)
       local bufopts = { noremap = true, silent = true, buffer = bufnr }
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
