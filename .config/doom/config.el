@@ -85,10 +85,10 @@
 ;; Ensuring that emacs lsp uses only ccls and not clangd
 (after! lsp-mode
   (lsp-register-client
-    (make-lsp-client
-     :new-connection (lsp-stdio-connection '("json-languageserver" "--stdio"))
-     :major-modes '(json-mode json-ts-mode)
-     :server-id 'json-languageserver)))
+   (make-lsp-client
+    :new-connection (lsp-stdio-connection '("json-languageserver" "--stdio"))
+    :major-modes '(json-mode json-ts-mode)
+    :server-id 'json-languageserver)))
 
 
 ;; Editing splash screen
@@ -117,3 +117,9 @@
 
 (after! company
   (setq company-minimum-prefix-length 1))
+
+;; Set tab to 4
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
+(setq-default evil-shift-width 4)
+(setq tab-stop-list (number-sequence 4 200 4))
