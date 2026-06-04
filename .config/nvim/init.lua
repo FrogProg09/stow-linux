@@ -2,9 +2,11 @@
 --          by Frogprog (https://github.com/FrogProg09/)
 --          year 2026
 
-vim.deprecate = function() end
+vim.deprecate = function() end -- disable the useless warning
 
 require('options') -- basic things
+
+vim.keymap.set('n', '<Leader>t', ':vsplit term://$SHELL<CR>') -- open vertical term
 
 -- lazy.nvim bootstrap 
 
