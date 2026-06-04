@@ -5,8 +5,16 @@ return {
   keys = {
     { '<Leader>.', '<cmd>Telescope find_files<CR>' },
     { '<Leader>g', '<cmd>Telescope live_grep<CR>' },
+    { '<Leader>p', '<cmd>Telescope projects<CR>' },
   },
   config = function()
-    require('telescope').setup()
+    require('telescope').setup({
+      pickers = {
+        find_files = {
+          hidden = true,
+        },
+      },
+    })
+    require('telescope').load_extension('projects')
   end,
 }
