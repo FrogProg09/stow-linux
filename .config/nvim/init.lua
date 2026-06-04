@@ -2,6 +2,8 @@
 --          by Frogprog (https://github.com/FrogProg09/)
 --          year 2026
 
+vim.deprecate = function() end
+
 require('options') -- basic things
 
 -- lazy.nvim bootstrap 
