@@ -3,6 +3,7 @@
 layout=$(mmsg get keyboardlayout | jq -r '.layout')
 case "$layout" in
   *US*)  echo "US" ;;
-  *ussian*) echo "RU" ;;
+  *Russian*) echo "RU" ;;
+  *French*) echo "FR" ;;
   *)     echo "$layout" ;;
 esac
