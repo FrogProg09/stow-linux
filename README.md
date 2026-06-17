@@ -21,7 +21,7 @@ sudo pacman -S waybar swaync wlogout rofi swaybg hyprlock hypridle polkit-gnome 
 **AUR**
 
 ``` bash
-paru -S mango-git kanata
+paru -S mango-git kanata gnome-shell-pomodoro
 ```
 
 #### Terminal and Shell
