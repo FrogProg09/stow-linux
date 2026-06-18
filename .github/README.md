@@ -78,6 +78,10 @@ sudo pacman -S kitty fish eza bat jq hwinfo expac pacman-contrib curl
 sudo pacman -S neovim gvim emacs git stow
 ```
 
+I use [Vim-Plug](https://github.com/junegunn/vim-plug) as plugin manager for vim
+I use [Lazy](https://github.com/folke/lazy.nvim) as plugin manager for neovim
+I use [Doom Emacs](https://github.com/doomemacs/core) as emacs fork
+
 #### Sound, media and hardware
 
 ``` bash
@@ -129,6 +133,7 @@ stow .
 
 ### 3. Post-install
 
+- Vim - run PlugInstall after installation to be able to use all of the plugins
 - Neovim — opens automatically installs lazy.nvim and plugins
 - Doom Emacs — run doom install and doom sync
 - MangoWM — select MangoWM from your display manager
