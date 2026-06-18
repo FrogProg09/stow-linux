@@ -1,5 +1,5 @@
 <div align="center">
-<img alt="Profiles Pictures" src="https://github.com/FrogProg09/my-linux/blob/82a8df9a627c601c8f17605d98d9bc224ee22d0d/images/github_avatar.png" width="200" height="200"/>
+<img alt="Profiles Pictures" src="https://github.com/FrogProg09/stow-linux/blob/main/assets/avatar.jpeg" width="200" height="200"/>
 </div>
 <div align="center">
     <h1> Frogprog Linux Dotfiles</h1>
