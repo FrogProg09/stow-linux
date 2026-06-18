@@ -50,21 +50,6 @@ Plus even I personally haven't come up with smth 100% convinient yet.
 | Super + Shift + 1-0 | Move window to tag |
 | ALT + Q | Exit |
 
-## Copying
-
-You can basically do whaterver your heart desires with this repo, as long as it's under BSD-3 license.
-I would be glad if someone wanted to contribute to this repo!
-
-## Credits
-
-- Thanks [SPROS: 2799](https://www.youtube.com/@5pr05) for inspiration
-- Thanks [1amSimp1e](https://github.com/1amSimp1e/dots) for amaizing readme example
-
-*If you need to contact with me:*
-
-- Discord: Frogprog
-- Telegram: @frogprog_nerd_official *(preferred)*
-
 ## Installation
 
 ### 1. Install dependencies
@@ -147,3 +132,18 @@ stow .
 - Neovim — opens automatically installs lazy.nvim and plugins
 - Doom Emacs — run doom install and doom sync
 - MangoWM — select MangoWM from your display manager
+
+## Copying
+
+You can basically do whaterver your heart desires with this repo, as long as it's under BSD-3 license.
+I would be glad if someone wanted to contribute to this repo!
+
+## Credits
+
+- Thanks [SPROS: 2799](https://www.youtube.com/@5pr05) for inspiration
+- Thanks [1amSimp1e](https://github.com/1amSimp1e/dots) for amaizing readme example
+
+*If you need to contact with me:*
+
+- Discord: Frogprog
+- Telegram: @frogprog_nerd_official *(preferred)*
