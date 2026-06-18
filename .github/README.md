@@ -20,10 +20,10 @@
 
 ## Screenshots
 
-![Desktop](assets/base.png)
-![Doom emacs](assets/doom-emacs.png)
-![Neovim](assets/nvim.png)
-![Terminal](assets/terminal.png)
+![Desktop](/assets/base.png)
+![Doom emacs](/assets/doom-emacs.png)
+![Neovim](/assets/nvim.png)
+![Terminal](/assets/terminal.png)
 
 ## Keybindings
 
