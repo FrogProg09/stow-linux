@@ -24,7 +24,7 @@
 ;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 26))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 22))
 (setq vterm-timer-delay 0.01)
 
 ;;
@@ -91,11 +91,8 @@
     :server-id 'json-languageserver)))
 
 
-;; Editing splash screen
-
+;; Remove the default short menu
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
-(add-hook! '+doom-dashboard-functions :append
-  (insert "\n" (+doom-dashboard--center +doom-dashboard--width "Welcome home, frogprog")))
 
 ;; Adding org mode basic template
 
