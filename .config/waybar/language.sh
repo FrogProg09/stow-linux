@@ -1,8 +1,8 @@
 #!/bin/bash
 
-layout=$(mmsg get keyboardlayout | jq -r '.layout')
+layout=$(hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap')
 case "$layout" in
-  *US*)  echo "US" ;;
+  *English*)  echo "US" ;;
   *Russian*) echo "RU" ;;
   *French*) echo "FR" ;;
   *)     echo "$layout" ;;

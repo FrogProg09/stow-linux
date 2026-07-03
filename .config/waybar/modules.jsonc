@@ -20,7 +20,7 @@
         "exec": "~/.config/waybar/language.sh",
         "interval": 0.3,
         "format": "[  {}  ]",
-        "tooltip": false,
+        "tooltip": false
     },
 
     "ext/workspaces": {
@@ -45,7 +45,7 @@
             "7": "[ 7 ]",
             "8": "[ 8 ]",
             "9": "[ 9 ]",
-            "10": "[ 10 ]",
+            "10": "[ 10 ]"
         }
     },
 
@@ -124,5 +124,5 @@
         },
         "on-click": "pkill pavucontrol || pavucontrol",
         "tooltip": false
-    },
+    }
 }
