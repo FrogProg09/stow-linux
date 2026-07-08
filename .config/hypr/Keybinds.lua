@@ -8,13 +8,12 @@ local mainMod = "SUPER"
 
 -- Apps
 local appBinds = {
-  { key = "B",         cmd = "brave"            },
+  { key = "B",         cmd = "firefox"          },
   { key = "T",         cmd = "Telegram"         },
   { key = "O",         cmd = "obsidian"         },
   { key = "N",         cmd = "swaync-client -t" },
   { key = "SHIFT + E", cmd = "nautilus"         },
   { key = "E",         cmd = "emacsclient -c"   },
-  { key = "S",         cmd = "screenshot.sh"    },
   { key = "R",         cmd = "hyprctl reload"   },
   { key = "D",         cmd = "rofi -show drun"  },
   { key = "Return",    cmd = "kitty"            },
@@ -24,6 +23,8 @@ local appBinds = {
 for _, b in ipairs(appBinds) do
   hl.bind(mainMod .. " + " .. b.key, hl.dsp.exec_cmd(b.cmd))
 end
+
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("sh /home/frogprog/.config/hypr/screenshot.sh"))
 
 -- Exit / kill
 hl.bind("ALT + Q",           hl.dsp.exit())
@@ -102,8 +103,10 @@ hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd("playerctl previous"),   { lo
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 
 -- Layout switching
-hl.bind(mainMod .. " + SHIFT + M", hl.dsp.layout("master"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.layout("scrolling"))
+hl.bind(mainMod .. " + SHIFT + M", function()
+    local ws = hl.get_active_workspace()
+    if ws then hl.workspace_rule({ workspace = tostring(ws.id), layout = "master" }) end
+end)
 
 
 
