@@ -19,6 +19,12 @@
             rofi
             kitty
             fish
+            eza
+            fishPlugins.autopair
+            fishPlugins.pure
+            fishPlugins.bobthefisher
+            tealdeer
+            yyjson
             emacs
             hunspell
             hunspellDicts.en_US
@@ -52,7 +58,7 @@
             grim
             ];
 
-    # Dotfiles go here
+# Dotfiles go here
     xdg.configFile = {
         "colors.css".source              = ./.config/colors.css;
         "starship.toml".source           = ./.config/starship.toml;
