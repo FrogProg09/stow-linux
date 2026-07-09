@@ -1,9 +1,0 @@
-[Unit]
-Description=StartTree HTTP Server
-
-[Service]
-ExecStart=/usr/bin/python3 -m http.server 9876 --directory %h/.config/StartTree
-Restart=always
-
-[Install]
-WantedBy=default.target
