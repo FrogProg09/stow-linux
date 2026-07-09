@@ -1,12 +1,12 @@
 {
     "label" : "suspend",
-    "action" : "systemctl suspend && hyprlock -c $HOME/.config/mango/hyprlock.conf",
+    "action" : "systemctl suspend && hyprlock",
     "text" : "Suspend",
     "keybind" : "u"
 }
 {
     "label" : "lock",
-    "action" : "hyprlock -c $HOME/.config/mango/hyprlock.conf",
+    "action" : "hyprlock",
     "text" : "Lock",
     "keybind" : "l"
 }

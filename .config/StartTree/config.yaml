@@ -1,0 +1,19 @@
+font_size: 24
+theme: gruvbox
+tree_1:
+  general:
+    github: "https://www.github.com/"
+    vpn: "https://timeweb.cloud/my/projects/848015"
+    contabo: "https://new.contabo.com/servers/vps"
+    claude: "https://claude.ai/new"
+    gemini: "https://gemini.google.com/app"
+    youtube: "https://www.youtube.com/"
+
+tree_2:
+  stuff:
+    proton: "https://mail.proton.me/u/1/inbox"
+    gmail: "https://mail.google.com/"
+    school: "https://onlineschool-1.ru/study/dashboard"
+    french: "https://edu.anecole.com/cabinet/student/lessons"
+    english: "https://edvibe.com/cabinet/student/lessons"
+    art: "https://my.hudozhnik.online/teach/control/stream/index"
