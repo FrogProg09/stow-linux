@@ -11,10 +11,24 @@
                     :font "JetBrainsMono Nerd Font Mono"
                     :height 170)
 
-(hl-line-mode 1)
+
+(hl-line-mode -1)
 (load-theme 'doom-gruvbox t)
 (doom-modeline-mode 1)
 (blink-cursor-mode -1)
+(electric-pair-mode 1)
+(rainbow-delimiters-mode t)
+
+;; split windows vertically by default
+(setq split-width-threshold 0)
+(setq split-height-threshold nil)
+
+(setq dired-auto-revert-buffer t) ; update dired each time one opens it
+
+;; tabs  =  4
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq-default evil-shift-width 4)
 
 
 ;; PACKAGE CONFIG
@@ -35,9 +49,13 @@
   :config
   (evil-collection-init))
 
+;; eazy commets
+(evil-commentary-mode t)
+
 ;; Make dired look pretty
 (use-package diredfl
   :hook (dired-mode . diredfl-mode))
+
 
 ;; Syntax highlighting (https://www.masteringemacs.org/article/how-to-get-started-tree-sitter)
 (setq treesit-language-source-alist
@@ -57,44 +75,40 @@
 
 
 ;; Autocompletion
-;; https://company-mode.github.io/
-
+;; https://github.com/minad/corfu
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-(global-company-mode 1)
-
-(setq company-minimum-prefix-length 2
-      company-tooltip-limit 10
-      company-tooltip-maximum-width 100
-      company-selection-wrap-around t
-      company-idle-delay 0.5)
-
-
+(use-package corfu
+  :init
+  (setq corfu-cycle t
+        corfu-auto t
+        corfu-auto-delay 0.2
+        corfu-auto-prefix 2
+        corfu-quit-at-boundary nil)
+  :config
+  (corfu-popupinfo-mode 1)
+  (global-corfu-mode 1))
 (vertico-mode 1)
 
-;; LSP (built-in)
-;;(use-package eglot
-;;  :defer t
-;;  :hook ((python-mode . eglot-ensure)
-;;         (c-mode . eglot-ensure)
-;;         (c++-mode . eglot-ensure)
-;;	 (lua-mode . eglot-ensure)))
+(add-to-list 'completion-at-point-functions #'cape-file)
+(add-to-list 'completion-at-point-functions #'cape-dabbrev)
+
+;; LSP
+(use-package lsp-mode
+  :hook ((python-mode . lsp-deferred)
+         (c-mode . lsp-deferred)
+         (c++-mode . lsp-deferred)
+         (lua-mode . lsp-deferred))
+  :commands lsp
+  :config
+  (setq lsp-completion-provider :none))
+
+(setq lsp-headerline-breadcrumb-enable nil)   ;; breadcrumb bar
+(setq lsp-headerline-enable nil)              ;; fully disable headerline
+(setq lsp-modeline-diagnostics-enable nil)
 
 
-;;(use-package orderless
- ;; :config
- ;; (setq completion-styles '(orderless basic)
- ;;       completion-category-defaults nil
- ;;       completion-category-overrides '((file (styles partial-completion)))))
-
-;;(use-package marginalia
-;;  :config
-;;  (marginalia-mode 1))
-
-;;(use-package consult
-;;  :bind (("C-x b" . consult-buffer)
-;;         ("M-y" . consult-yank-pop)))
 
 ;; make magit fullscreen in current buffer
 (use-package magit
@@ -110,6 +124,10 @@
 
 
 
+
+(with-eval-after-load 'evil
+  (define-key evil-insert-state-map (kbd "TAB") #'tab-to-tab-stop))
+
 (defvar my-leader-key (make-sparse-keymap)
   "Leader key prefix map.")
 
@@ -122,9 +140,14 @@
   "Prefix for SPC b ...")
 (define-key my-leader-key (kbd "b") my-b-map)
 
+(defvar my-w-map (make-sparse-keymap)
+  "Prefix for SPC w ...")
+(define-key my-leader-key (kbd "w") my-w-map)
+
 (defvar my-f-map (make-sparse-keymap)
   "Prefix for SPC f ...")
 (define-key my-leader-key (kbd "f") my-f-map)
+
 
 (with-eval-after-load 'magit
   (evil-define-key 'normal magit-status-mode-map
@@ -138,13 +161,32 @@
     (dired "~/.dotfiles/.config/emacs/")))
 
 (with-eval-after-load 'dired
-  (evil-define-key 'normal dired-mode-map (kbd "N") #'dired-create-empty-file))
+  (evil-define-key 'normal dired-mode-map (kbd "n") #'dired-create-empty-file))
 
 (define-key my-f-map (kbd "f") 'dired-jump)
+
 (define-key my-leader-key (kbd ":") 'execute-extended-command)
 (define-key my-leader-key (kbd "g") 'magit-status)
+(define-key my-leader-key (kbd "c") 'compile)
+
 (define-key my-b-map (kbd "b") 'consult-buffer)
 (define-key my-b-map (kbd "i") 'buffer-menu)
+
+
+(define-key my-w-map (kbd "v") 'split-window-right)
+(define-key my-w-map (kbd "q") 'delete-window)
+(define-key my-w-map (kbd "w") 'other-window)
+
+(define-key my-w-map (kbd "h") 'windmove-left)
+(define-key my-w-map (kbd "j") 'windmove-down)
+(define-key my-w-map (kbd "k") 'windmove-up)
+(define-key my-w-map (kbd "l") 'windmove-right)
+
+(define-key my-w-map (kbd "H") 'windmove-swap-states-left)
+(define-key my-w-map (kbd "J") 'windmove-swap-states-down)
+(define-key my-w-map (kbd "K") 'windmove-swap-states-up)
+(define-key my-w-map (kbd "L") 'windmove-swap-states-right)
+
 
 (define-key my-leader-key (kbd "r") 'eval-buffer)
 
