@@ -1,11 +1,11 @@
 ;; ████████ ████     ████     ██       ██████   ████████
-;;░██░░░░░ ░██░██   ██░██    ████     ██░░░░██ ██░░░░░░ 
-;;░██      ░██░░██ ██ ░██   ██░░██   ██    ░░ ░██       
+;;░██░░░░░ ░██░██   ██░██    ████     ██░░░░██ ██░░░░░░
+;;░██      ░██░░██ ██ ░██   ██░░██   ██    ░░ ░██
 ;;░███████ ░██ ░░███  ░██  ██  ░░██ ░██       ░█████████
 ;;░██░░░░  ░██  ░░█   ░██ ██████████░██       ░░░░░░░░██
 ;;░██      ░██   ░    ░██░██░░░░░░██░░██    ██       ░██
-;;░████████░██        ░██░██     ░██ ░░██████  ████████ 
-;;░░░░░░░░ ░░         ░░ ░░      ░░   ░░░░░░  ░░░░░░░░  
+;;░████████░██        ░██░██     ░██ ░░██████  ████████
+;;░░░░░░░░ ░░         ░░ ░░      ░░   ░░░░░░  ░░░░░░░░
 ;;
 ;;                 MAIN CONFIGURATION FILE
 ;;                                  by Frogprog (https://github.com/FrogProg09/)
@@ -15,11 +15,14 @@
 ;; - packages.el (install packages)
 ;; - config.el (configure system and packages)
 
+;;; Code:
 (setq evil-want-keybinding nil)
-(setq evil-want-integration t)   
+(setq evil-want-integration t)
 
-(setq inhibit-startup-message t
+(setq inhibit-startup-message nil
       visible-bell nil)
+
+(setq make-backup-files nil)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -47,11 +50,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(company company-fuzzy company-spell consult doom-themes
-	     evil-collection magit marginalia orderless vertico)))
+   '(all-the-icons-dired company company-box company-fuzzy company-spell
+			 consult diredfl dirvish doom-modeline
+			 doom-themes elsa evil-collection flycheck
+			 lsp-mode lsp-ui magit marginalia no-littering
+			 orderless tree-sitter vertico)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;; init.el ends here

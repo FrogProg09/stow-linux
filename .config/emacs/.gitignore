@@ -1,8 +1,11 @@
 elpa/
 eln-cache/
+var/
+etc/
 auto-save-list/
 recentf
 tramp
 transient/
+tree-sitter/
 *.elc
 *.eln
