@@ -18,6 +18,15 @@
 (blink-cursor-mode -1)
 (electric-pair-mode 1)
 (rainbow-delimiters-mode t)
+(global-diff-hl-mode 1)
+(recentf-mode 1)
+
+;; pdf mode
+(setq doc-view-resolution 300)
+(setq pdf-view-use-scaling t)
+(setq pdf-cache-image-limit 10) ;; Default is often 64
+(setq image-cache-eviction-delay 10) ;; Clear unused images after 10 seconds
+(add-hook 'pdf-view-mode-hook #'(lambda () (display-line-numbers-mode -1)))
 
 ;; split windows vertically by default
 (setq split-width-threshold 0)
@@ -30,6 +39,13 @@
 (setq-default tab-width 4)
 (setq-default evil-shift-width 4)
 
+;; Get rid of the backup files
+(setq make-backup-files nil)
+
+;; Spelling
+(setq ispell-program-name "hunspell")
+(setq ispell-dictionary "en_US")
+(setq ispell-dictionary "ru_RU")
 
 ;; PACKAGE CONFIG
 
@@ -48,6 +64,26 @@
   :after evil
   :config
   (evil-collection-init))
+
+;; great termial
+
+(use-package vterm
+  :defer t
+  :config
+  (setq vterm-max-scrollback 10000
+        vterm-always-compile-module t)
+  :hook (vterm-mode . (lambda () (display-line-numbers-mode -1))))
+
+(setq vterm-enable-true-colors t)
+
+(setq vterm-eval-cmds '(("find-file" find-file)
+                        ("message" message)
+                        ("vterm-clear-scrollback" vterm-clear-scrollback)
+                        ("dired" dired)
+                        ("ediff-files" ediff-files)))
+
+(setq shell-file-name "/bin/fish")
+
 
 ;; eazy commets
 (evil-commentary-mode t)
@@ -160,14 +196,28 @@
     (interactive)
     (dired "~/.dotfiles/.config/emacs/")))
 
+(define-key my-f-map (kbd "h")
+  (lambda ()
+    (interactive)
+    (dired "~/")))
+
+(define-key my-f-map (kbd "d")
+  (lambda ()
+    (interactive)
+    (dired "~/Documents/")))
+
+
 (with-eval-after-load 'dired
   (evil-define-key 'normal dired-mode-map (kbd "n") #'dired-create-empty-file))
 
 (define-key my-f-map (kbd "f") 'dired-jump)
+(define-key my-f-map (kbd "r") 'recentf-open)
 
 (define-key my-leader-key (kbd ":") 'execute-extended-command)
 (define-key my-leader-key (kbd "g") 'magit-status)
 (define-key my-leader-key (kbd "c") 'compile)
+(define-key my-leader-key (kbd "v") 'vterm)
+(define-key my-leader-key (kbd "h") 'describe-symbol)
 
 (define-key my-b-map (kbd "b") 'consult-buffer)
 (define-key my-b-map (kbd "i") 'buffer-menu)

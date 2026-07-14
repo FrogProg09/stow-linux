@@ -3,6 +3,7 @@ theme: gruvbox
 tree_1:
   general:
     github: "https://www.github.com/"
+    codeberg: "https://codeberg.org/"
     vpn: "https://timeweb.cloud/my/projects/848015"
     contabo: "https://new.contabo.com/servers/vps"
     claude: "https://claude.ai/new"
@@ -13,6 +14,7 @@ tree_2:
   stuff:
     proton: "https://mail.proton.me/u/1/inbox"
     gmail: "https://mail.google.com/"
+    reddit: "https://reddit.com"
     school: "https://onlineschool-1.ru/study/dashboard"
     french: "https://edu.anecole.com/cabinet/student/lessons"
     english: "https://edvibe.com/cabinet/student/lessons"

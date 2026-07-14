@@ -16,6 +16,7 @@
 ;; - config.el (configure system and packages)
 
 ;;; Code:
+
 (setq evil-want-keybinding nil)
 (setq evil-want-integration t)
 
@@ -51,12 +52,15 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    '(all-the-icons-dired cape company company-box company-fuzzy
-			 company-spell consult corfu diredfl dirvish
-			 doom-modeline doom-themes elsa
-			 evil-collection evil-commentary flycheck
-			 lsp-mode lsp-ui magit marginalia no-littering
-			 orderless rainbow-delimiters tree-sitter
-			 vertico)))
+                         company-spell consult corfu diff-hl diredfl
+                         dirvish doom-modeline doom-themes eat elsa
+                         emacs-splash evil-collection evil-commentary
+                         flycheck lsp-mode lsp-ui magit marginalia
+                         no-littering orderless rainbow-delimiters
+                         splash-screen tree-sitter vertico vterm))
+ '(package-vc-selected-packages
+   '((splash-screen :url "https://github.com/rougier/emacs-splash"
+                    :branch "master"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
