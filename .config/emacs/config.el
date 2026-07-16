@@ -207,6 +207,11 @@
               (interactive)
               (dired "~/Documents/")))
 
+(define-key my-f-map (kbd "n")
+            (lambda ()
+              (interactive)
+              (dired "~/.nixos")))
+
 
 (with-eval-after-load 'dired
   (evil-define-key 'normal dired-mode-map (kbd ".") #'dired-create-empty-file))
