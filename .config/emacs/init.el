@@ -57,7 +57,8 @@
                          emacs-splash evil-collection evil-commentary
                          flycheck lsp-mode lsp-ui magit marginalia
                          no-littering orderless rainbow-delimiters
-                         splash-screen tree-sitter vertico vterm))
+                         splash-screen tree-sitter undo-tree vertico
+                         vterm))
  '(package-vc-selected-packages
    '((splash-screen :url "https://github.com/rougier/emacs-splash"
                     :branch "master"))))

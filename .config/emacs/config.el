@@ -58,12 +58,24 @@
   (evil-mode 1)
   (evil-define-key 'normal dired-mode-map
     "h" 'dired-up-directory
-    "l" 'dired-find-file))
+    "l" 'dired-find-file
+    "q" 'kill-this-buffer))
 
 (use-package evil-collection
   :after evil
   :config
-  (evil-collection-init))
+  (evil-collection-init)
+  (evil-collection-dired-setup))
+
+(setq evil-undo-system 'undo-tree)
+
+;; Persistent undo tree
+(global-undo-tree-mode 1)
+(setq undo-tree-auto-save-history t)
+(setq undo-tree-history-directory-alist '(("." . "~/.config/emacs/undo/")))
+
+;; eazy commets
+(evil-commentary-mode t)
 
 ;; great termial
 
@@ -75,18 +87,7 @@
   :hook (vterm-mode . (lambda () (display-line-numbers-mode -1))))
 
 (setq vterm-enable-true-colors t)
-
-(setq vterm-eval-cmds '(("find-file" find-file)
-                        ("message" message)
-                        ("vterm-clear-scrollback" vterm-clear-scrollback)
-                        ("dired" dired)
-                        ("ediff-files" ediff-files)))
-
 (setq shell-file-name "/bin/fish")
-
-
-;; eazy commets
-(evil-commentary-mode t)
 
 ;; Make dired look pretty
 (use-package diredfl
@@ -95,19 +96,19 @@
 
 ;; Syntax highlighting (https://www.masteringemacs.org/article/how-to-get-started-tree-sitter)
 (setq treesit-language-source-alist
-   '((bash "https://github.com/tree-sitter/tree-sitter-bash")
-     (cmake "https://github.com/uyha/tree-sitter-cmake")
-     (css "https://github.com/tree-sitter/tree-sitter-css")
-     (elisp "https://github.com/Wilfred/tree-sitter-elisp")
-     (go "https://github.com/tree-sitter/tree-sitter-go")
-     (html "https://github.com/tree-sitter/tree-sitter-html")
-     (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
-     (json "https://github.com/tree-sitter/tree-sitter-json")
-     (make "https://github.com/alemuller/tree-sitter-make")
-     (markdown "https://github.com/ikatyang/tree-sitter-markdown")
-     (python "https://github.com/tree-sitter/tree-sitter-python")
-     (toml "https://github.com/tree-sitter/tree-sitter-toml")
-     (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+      '((bash "https://github.com/tree-sitter/tree-sitter-bash")
+        (cmake "https://github.com/uyha/tree-sitter-cmake")
+        (css "https://github.com/tree-sitter/tree-sitter-css")
+        (elisp "https://github.com/Wilfred/tree-sitter-elisp")
+        (go "https://github.com/tree-sitter/tree-sitter-go")
+        (html "https://github.com/tree-sitter/tree-sitter-html")
+        (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
+        (json "https://github.com/tree-sitter/tree-sitter-json")
+        (make "https://github.com/alemuller/tree-sitter-make")
+        (markdown "https://github.com/ikatyang/tree-sitter-markdown")
+        (python "https://github.com/tree-sitter/tree-sitter-python")
+        (toml "https://github.com/tree-sitter/tree-sitter-toml")
+        (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
 
 
 ;; Autocompletion
@@ -192,23 +193,23 @@
 
 
 (define-key my-f-map (kbd "c")
-  (lambda ()
-    (interactive)
-    (dired "~/.dotfiles/.config/emacs/")))
+            (lambda ()
+              (interactive)
+              (dired "~/.dotfiles/.config/emacs/")))
 
 (define-key my-f-map (kbd "h")
-  (lambda ()
-    (interactive)
-    (dired "~/")))
+            (lambda ()
+              (interactive)
+              (dired "~/")))
 
 (define-key my-f-map (kbd "d")
-  (lambda ()
-    (interactive)
-    (dired "~/Documents/")))
+            (lambda ()
+              (interactive)
+              (dired "~/Documents/")))
 
 
 (with-eval-after-load 'dired
-  (evil-define-key 'normal dired-mode-map (kbd "n") #'dired-create-empty-file))
+  (evil-define-key 'normal dired-mode-map (kbd ".") #'dired-create-empty-file))
 
 (define-key my-f-map (kbd "f") 'dired-jump)
 (define-key my-f-map (kbd "r") 'recentf-open)

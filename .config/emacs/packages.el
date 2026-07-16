@@ -9,6 +9,7 @@
 (use-package evil :ensure t)
 (use-package evil-collection :ensure t)
 (use-package evil-commentary :ensure t)
+(use-package undo-tree :ensure t)
 
 (use-package pdf-tools :ensure t)
 

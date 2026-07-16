@@ -7,5 +7,6 @@ recentf
 tramp
 transient/
 tree-sitter/
+undo/
 *.elc
 *.eln
